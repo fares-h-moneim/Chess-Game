@@ -1,6 +1,20 @@
 #include "ChessPiece.h"
 
-void ChessPiece::drawpiece(int x, int y)
+void ChessPiece::drawpiece(int xx, int yy)
 {
-	DrawTexture(texture, x, y, WHITE);
+	DrawTexture(texture, xx, yy, WHITE);
+}
+
+Vector2 ChessPiece::getxy()
+{
+	Vector2 v;
+	v.x = this->x;
+	v.y = this->y;
+	return v;
+}
+
+void ChessPiece::setxy(Vector2 v)
+{
+	this->x = v.x;
+	this->y = v.y;
 }

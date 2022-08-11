@@ -7,6 +7,7 @@
 Grid::Grid(Texture2D text)
 {
 	//creating team
+	currentlyheld = nullptr;
 	texture = text;
 	std::string name = "A8";
 	king* kingBlack=new king('b');
@@ -53,26 +54,26 @@ Grid::Grid(Texture2D text)
 	x = 72;
 	y = 72;
 	//positioning pieces
-	arr[7][0].setpiece(rookWhite1);
+	arr[0][7].setpiece(rookWhite1);
 	arr[7][7].setpiece(rookWhite2);
-	arr[7][1].setpiece(knightWhite1);
-	arr[7][6].setpiece(knightWhite2);
-	arr[7][2].setpiece(bishopWhite2);
-	arr[7][5].setpiece(bishopWhite2);
-	arr[7][3].setpiece(queenWhite);
-	arr[7][4].setpiece(kingWhite);
+	arr[1][7].setpiece(knightWhite1);
+	arr[6][7].setpiece(knightWhite2);
+	arr[2][7].setpiece(bishopWhite1);
+	arr[5][7].setpiece(bishopWhite2);
+	arr[3][7].setpiece(queenWhite);
+	arr[4][7].setpiece(kingWhite);
 	arr[0][0].setpiece(rookBlack1);
-	arr[0][7].setpiece(rookBlack2);
-	arr[0][1].setpiece(knightBlack1);
-	arr[0][6].setpiece(knightBlack2);
-	arr[0][2].setpiece(bishopBlack2);
-	arr[0][5].setpiece(bishopBlack2);
-	arr[0][3].setpiece(queenBlack);
-	arr[0][4].setpiece(kingBlack);
+	arr[7][0].setpiece(rookBlack2);
+	arr[1][0].setpiece(knightBlack1);
+	arr[6][0].setpiece(knightBlack2);
+	arr[2][0].setpiece(bishopBlack1);
+	arr[5][0].setpiece(bishopBlack2);
+	arr[3][0].setpiece(queenBlack);
+	arr[4][0].setpiece(kingBlack);
 	for (int i = 0; i < 8; i++)
 	{
-		arr[6][i].setpiece(pawnsWhite[i]);
-		arr[1][i].setpiece(pawnsBlack[i]);
+		arr[i][6].setpiece(pawnsWhite[i]);
+		arr[i][1].setpiece(pawnsBlack[i]);
 	}
 
 
@@ -98,22 +99,21 @@ void Grid::mouseclicked()
 {
 	int xx, yy;
 	ChessPiece* ptrl;
+	
 	if (IsMouseButtonDown(0))
 	{
 		xx = GetMouseX();
 		yy = GetMouseY();
 		if (xx > x && xx < (x + sizex * 8) && yy>y && yy < (y + sizey * 8))
 		{
-			/*ptrl=arr[(xx - x) / sizex][(yy - y) / sizey].getpiece();
-			if (ptrl)
-			{
-				movepiece(xx, yy, ptrl);
-			}*/
+			if(!currentlyheld)
+				currentlyheld=arr[(xx - x) / sizex][(yy - y) / sizey].getpiece();
+
 			std::string s=arr[(xx - x) / sizex][(yy - y) / sizey].getname();
 			char c[4];
-			c[0] =  (yy - y) / sizey + 48;
+			c[0] =  (xx - x) / sizex + 48;
 			c[1] = ' ';
-			c[2] = (xx - x) / sizex + 48;
+			c[2] = (yy - y) / sizey + 48;
 			c[3] = 0;
 			DrawText(c, 1125, 690, 30, lightbrown);
 			c[0] = s[0];
@@ -124,29 +124,52 @@ void Grid::mouseclicked()
 		
 
 	}
+	if (currentlyheld)
+		movepiece();
+	
 
 }
 
-void Grid::movepiece(int xx, int yy, ChessPiece* ptr)
+void Grid::movepiece()
 {
 	int coorx=0, coory=0;
-	arr[(xx - x) / sizex][(yy - y) / sizey].setpiece(nullptr);
-	while (IsMouseButtonDown(0))
+	coorx = GetMouseX();
+	coory = GetMouseY();
+	if(arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece()==currentlyheld)
+		arr[(coorx - x) / sizex][(coory - y) / sizey].setpiece(nullptr);
+	
+	
+	currentlyheld->drawpiece(coorx-32, coory-16);
+	if (IsMouseButtonUp(0))
 	{
-		coorx = GetMouseX();
-		coory = GetMouseY();
-		//ptr->drawpiece(coorx, coory);
+		
+		if (coorx > x && coorx < (x + sizex * 8) && coory>y && coory < (y + sizey * 8))
+		{
+			if (!arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece())
+			{
+				arr[(coorx - x) / sizex][(coory - y) / sizey].setpiece(currentlyheld);
+				currentlyheld = nullptr;
+			}
+			else
+			{
+				Vector2 v=currentlyheld->getxy();
+				arr[(int)v.x][(int)v.y].setpiece(currentlyheld);
+				currentlyheld = nullptr;
+			}
+		}
+		else
+		{
+			Vector2 v = currentlyheld->getxy();
+			arr[(int)v.x][(int)v.y].setpiece(currentlyheld);
+			currentlyheld = nullptr;
+		}
 	}
-	if (coorx > x && coorx < (x + sizex * 8) && coory>y && coory < (y + sizey * 8))
-	{
-		arr[(coorx - x) / sizex][(coory - y) / sizey].setpiece(ptr);
-		ptr->drawpiece(coorx, coory);
-
-	}
-	else
-	{
-		arr[(xx - x) / sizex][(yy - y) / sizey].setpiece(ptr);
-	}
 
 
+}
+
+cell Grid::getcell(Vector2 v)
+{
+
+	return arr[(int)v.x][(int)v.y];
 }
