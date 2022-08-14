@@ -6,5 +6,6 @@ class knight :
 public:
    
      knight(char c);
+     Vector2* getlegalmoves(Grid* gptr);
 };
 

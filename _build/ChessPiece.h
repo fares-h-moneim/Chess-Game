@@ -1,5 +1,6 @@
 #pragma once
 #include"raylib.h"
+class Grid;
 class ChessPiece
 {
 protected:
@@ -11,6 +12,8 @@ public:
 	void drawpiece(int xx, int yy);
 	Vector2 getxy();
 	void setxy(Vector2 v);
+	virtual char getteam();
+	virtual Vector2* getlegalmoves(Grid* gptr)=0;
 
 };
 

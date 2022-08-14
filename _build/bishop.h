@@ -5,5 +5,6 @@ class bishop :
 {
 public:
     bishop(char c);
+    Vector2* getlegalmoves(Grid* gptr);
 };
 

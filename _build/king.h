@@ -5,5 +5,6 @@ class king :
 {
 public:
     king(char c);
+    Vector2* getlegalmoves(Grid* gptr);
 };
 

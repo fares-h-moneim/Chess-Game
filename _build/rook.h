@@ -5,5 +5,6 @@ class rook :
 {
 public:
     rook(char c);
+    Vector2* getlegalmoves(Grid* gptr);
 };
 

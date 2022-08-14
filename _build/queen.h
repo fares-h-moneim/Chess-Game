@@ -5,5 +5,6 @@ class queen :
 {
 public:
     queen(char c);
+    Vector2* getlegalmoves(Grid* gptr);
 };
 
