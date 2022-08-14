@@ -31,6 +31,54 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 			v.x = x;
 			v.y = y + 2.0;
 			legal[count++] = v;
+			v.x = x + 1;
+			v.y = y + 1;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						legal[count++] = v;
+					}
+			}
+			v.x = x - 1;
+			v.y = y + 1;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						legal[count++] = v;
+					}
+			}
+			v.x = x + 1;
+			v.y = y;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						v.x = x + 1;
+						v.y = y + 1;
+						legal[count++] = v;
+					}
+			}
+			v.x = x - 1;
+			v.y = y;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						v.x = x - 1;
+						v.y = y + 1;
+						legal[count++] = v;
+					}
+			}
 			v.x = -1.0;
 			v.y = -1.0;
 			legal[count++] = v;
@@ -111,6 +159,54 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 			v.x = x;
 			v.y = y - 2;
 			legal[count++] = v;
+			v.x = x + 1;
+			v.y = y - 1;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						legal[count++] = v;
+					}
+			}
+			v.x = x - 1;
+			v.y = y - 1;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						legal[count++] = v;
+					}
+			}
+			v.x = x + 1;
+			v.y = y;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						v.x = x + 1;
+						v.y = y - 1;
+						legal[count++] = v;
+					}
+			}
+			v.x = x - 1;
+			v.y = y;
+			cptr = gptr->getcell(v);
+			if (cptr)
+			{
+				if (cptr->getpiece())
+					if (cptr->getpiece()->getteam() != team)
+					{
+						v.x = x - 1;
+						v.y = y - 1;
+						legal[count++] = v;
+					}
+			}
 			v.x = -1.0;
 			v.y = -1.0;
 			legal[count++] = v;

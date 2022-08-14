@@ -12,7 +12,7 @@ queen::queen(char c)
 Vector2* queen::getlegalmoves(Grid* gptr)
 {
 	int count = 0;
-	Vector2 legal[36];
+	Vector2 legal[64];
 	Vector2 v;
 	cell* cptr = nullptr;
 	v.x = x;

@@ -178,12 +178,16 @@ void Grid::movepiece(char &tm)
 		if (currentlyheld)
 		{
 			//to be fixed
-			int arrx[30];
-			int arry[30];
+			int arrx[36];
+			int arry[36];
+			if (currentlyheld->getxy().x == 6 && currentlyheld->getxy().y == 5) {
+				printf("...");
+			}
 			Vector2* v1 = currentlyheld->getlegalmoves(this);
 			int n = 0;
 			int xx;
 			int yy;
+			
 			while (v1[n].x != -1)
 			{
 				arrx[n] = v1[n].x;
@@ -191,9 +195,8 @@ void Grid::movepiece(char &tm)
 				n++;
 			}
 			n = 0;
-			while (arrx[n] > 0)
+			while (n<36)
 			{
-				
 				DrawRectangle(arrx[n] * 72 + 72, arry[n] * 72 + 72, 72, 72, Color{ 0,158,47,125 });
 				n++;
 			}
