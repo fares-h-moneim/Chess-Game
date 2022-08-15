@@ -24,13 +24,26 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 	{
 		if (first)
 		{
-
+			bool check = true; //checking if there is a piece in the cell in front
 			v.x = x;
 			v.y = y + 1;
-			legal[count++] = v;
+			cptr = gptr->getcell(v);
+			if (cptr) {
+				if (!cptr->getpiece()) {
+					legal[count++] = v;
+				}
+				else {
+					check = false;
+				}
+			}
 			v.x = x;
 			v.y = y + 2.0;
-			legal[count++] = v;
+			cptr = gptr->getcell(v);
+			if (cptr && check) {
+				if (!cptr->getpiece()) {
+					legal[count++] = v;
+				}
+			}
 			v.x = x + 1;
 			v.y = y + 1;
 			cptr = gptr->getcell(v);
@@ -152,13 +165,26 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 	{
 		if (first)
 		{
-
+			bool check = true; //checking if there is a piece in the cell in front
 			v.x = x;
 			v.y = y - 1;
-			legal[count++] = v;
+			cptr = gptr->getcell(v);
+			if (cptr) {
+				if (!cptr->getpiece()) {
+					legal[count++] = v;
+				}
+				else {
+					check = false;
+				}
+			}
 			v.x = x;
 			v.y = y - 2;
-			legal[count++] = v;
+			cptr = gptr->getcell(v);
+			if (cptr && check) {
+				if (!cptr->getpiece()) {
+					legal[count++] = v;
+				}
+			}
 			v.x = x + 1;
 			v.y = y - 1;
 			cptr = gptr->getcell(v);

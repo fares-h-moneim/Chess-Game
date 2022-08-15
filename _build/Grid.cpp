@@ -8,10 +8,10 @@
 
 
 
-
 Grid::Grid(Texture2D text)
 {
 	//creating team
+	team = 0;
 	chessmove = LoadSound("./resources/chessmove.wav");
 	notchessmove= LoadSound("./resources/notchessmove.wav");
 	currentlyheld = nullptr;
@@ -103,7 +103,7 @@ void Grid::DrawGrid()
 	}
 	int xx, yy;
 	xx = 750;
-	yy = 135;
+	yy = 130;
 	char c[3];
 	c[1] = 'x';
 	c[2]=0;
@@ -111,17 +111,35 @@ void Grid::DrawGrid()
 	{
 		c[0] = countremoved[i] + 48;
 		if(countremoved[i] != 0)
-		DrawText(c, xx, yy, 30, WHITE);
-		yy += 104;
+			DrawText(c, xx, yy, 30, WHITE);
+		yy += 110;
 	}
-	yy = 140;
-	xx = 905;
+	yy = 130;
+	xx = 900;
 	for (int i = 5; i < 10; i++)
 	{
 		c[0] = countremoved[i] + 48;
 		if (countremoved[i] != 0)
-		DrawText(c, xx, yy, 30, BLACK);
-		yy += 104;
+			DrawText(c, xx, yy, 30, BLACK);
+		yy += 110;
+	}
+	if (team == 0) {
+		std::string cur = "Currently Playing White";
+		char c[24];
+		for (int i = 0; i < cur.size(); i++) {
+			c[i] = cur[i];
+		}
+		c[23] = 0;
+		DrawText(c, 730, 690, 30, lightbrown);
+	}
+	else {
+		std::string cur = "Currently Playing Black";
+		char c[24];
+		for (int i = 0; i < cur.size(); i++) {
+			c[i] = cur[i];
+		}
+		c[23] = 0;
+		DrawText(c, 730, 690, 30, lightbrown);
 	}
 }
 
@@ -216,10 +234,14 @@ void Grid::movepiece(char &tm)
 			{
 				arr[(int)v1[n].x][(int)v1[n].y].setpiece(currentlyheld, countremoved);
 				currentlyheld = nullptr;
-				if (tm == 'w')
+				if (tm == 'w') {
 					tm = 'b';
-				else
+					team = 1;
+				}
+				else {
 					tm = 'w';
+					team = 0;
+				}
 				PlaySound(chessmove);
 				return;
             }
