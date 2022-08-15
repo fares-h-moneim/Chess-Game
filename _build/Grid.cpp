@@ -14,6 +14,7 @@ Grid::Grid(Texture2D text)
 	team = 0;
 	chessmove = LoadSound("./resources/chessmove.wav");
 	notchessmove= LoadSound("./resources/notchessmove.wav");
+	take = LoadSound("./resources/take.wav");
 	currentlyheld = nullptr;
 	texture = text;
 	std::string name = "A8";
@@ -232,6 +233,12 @@ void Grid::movepiece(char &tm)
 		{
 			if(((coorx - x) / sizex)==v1[n].x&& ((coory - y) / sizey)==v1[n].y)
 			{
+				if (arr[(int)((coorx - x) / sizex)][(int)((coory - y) / sizey)].getpiece()) {
+					PlaySound(take);
+				}
+				else {
+					PlaySound(chessmove);
+				}
 				arr[(int)v1[n].x][(int)v1[n].y].setpiece(currentlyheld, countremoved);
 				currentlyheld = nullptr;
 				if (tm == 'w') {
@@ -242,7 +249,6 @@ void Grid::movepiece(char &tm)
 					tm = 'w';
 					team = 0;
 				}
-				PlaySound(chessmove);
 				return;
             }
 			n++;

@@ -1,7 +1,7 @@
 ﻿  Grid.cpp
-E:\Chess_Game\chess-game\_build\Grid.cpp(149,14): warning C4101: 'ptrl': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(211,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(150,14): warning C4101: 'ptrl': unreferenced local variable
 E:\Chess_Game\chess-game\_build\Grid.cpp(212,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(207,8): warning C4101: 'yy': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(206,8): warning C4101: 'xx': unreferenced local variable
+E:\Chess_Game\chess-game\_build\Grid.cpp(213,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(208,8): warning C4101: 'yy': unreferenced local variable
+E:\Chess_Game\chess-game\_build\Grid.cpp(207,8): warning C4101: 'xx': unreferenced local variable
   game-premake-main.vcxproj -> E:\Chess_Game\chess-game\_bin\Debug\game-premake-main.exe
