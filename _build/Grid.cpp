@@ -216,7 +216,12 @@ void Grid::movepiece(char &tm)
 			n = 0;
 			while (n<36)
 			{
-				DrawRectangle(arrx[n] * 72 + 72, arry[n] * 72 + 72, 72, 72, Color{ 0,158,47,125 });
+				if (arrx[n] >= 0 && arrx[n] <= 7 && arry[n] <= 7 && arry[n] >= 0 && arr[arrx[n]][arry[n]].getpiece()) {
+					DrawRectangle(arrx[n] * 72 + 72, arry[n] * 72 + 72, 72, 72, Color{ 237,41,57,125 });
+				}
+				else {
+					DrawRectangle(arrx[n] * 72 + 72, arry[n] * 72 + 72, 72, 72, Color{ 0,158,47,125 });
+				}
 				n++;
 			}
 			currentlyheld->drawpiece(coorx - 32, coory - 16);
