@@ -14,6 +14,7 @@ Grid::Grid(Texture2D text)
 	team = 'w';
 	chessmove = LoadSound("./resources/chessmove.wav");
 	notchessmove= LoadSound("./resources/notchessmove.wav");
+	font = LoadFontEx("./resources/font.TTF", 60, NULL, 0);
 	take = LoadSound("./resources/take.wav");
 	currentlyheld = nullptr;
 	texture = text;
@@ -131,8 +132,12 @@ void Grid::DrawGrid()
 	for (int i = 0; i < 5; i++)
 	{
 		c[0] = countremoved[i] + 48;
-		if(countremoved[i] != 0)
-			DrawText(c, xx, yy, 30, WHITE);
+		Vector2 pos;
+		if (countremoved[i] != 0) {
+			pos.x = xx - 25;
+			pos.y = yy - 25;
+			DrawTextEx(font, c, pos, 60, 0, WHITE);
+		}
 		yy += 110;
 	}
 	yy = 130;
@@ -140,12 +145,20 @@ void Grid::DrawGrid()
 	for (int i = 5; i < 10; i++)
 	{
 		c[0] = countremoved[i] + 48;
-		if (countremoved[i] != 0)
-			DrawText(c, xx, yy, 30, BLACK);
+		Vector2 pos;
+		if (countremoved[i] != 0) {
+			pos.x = xx-25;
+			pos.y = yy-25;
+			DrawTextEx(font, c, pos, 60, 0, BLACK);
+		}
 		yy += 110;
 	}
-	if(checkmate())
-		DrawText("Checkmate", 730, 0, 30, RED);
+	if (checkmate()) {
+		Vector2 pos;
+		pos.x = 730;
+		pos.y = 0;
+		DrawTextEx(font, "Checkmate", pos, 60, 0, RED);
+	}
 	if (team == 'w') {
 		std::string cur = "Currently Playing White";
 		char c[24];
@@ -153,7 +166,10 @@ void Grid::DrawGrid()
 			c[i] = cur[i];
 		}
 		c[23] = 0;
-		DrawText(c, 730, 690, 30, lightbrown);
+		Vector2 pos;
+		pos.x = 730;
+		pos.y = 650;
+		DrawTextEx(font ,c, pos, 60, 0,lightbrown);
 	}
 	else {
 		std::string cur = "Currently Playing Black";
@@ -162,7 +178,10 @@ void Grid::DrawGrid()
 			c[i] = cur[i];
 		}
 		c[23] = 0;
-		DrawText(c, 730, 690, 30, lightbrown);
+		Vector2 pos;
+		pos.x = 730;
+		pos.y = 650;
+		DrawTextEx(font, c, pos, 60, 0, lightbrown);
 	}
 	
 }

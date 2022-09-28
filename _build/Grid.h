@@ -9,6 +9,7 @@ class Grid
 	Sound chessmove;
 	Sound notchessmove;
 	Sound take;
+	Font font;
 	char team; //w white b black
 	int countremoved[10]; //0 pawn 1 queen 2 bishop 3 knight 4 rook 0-4 white 5-9 black
 	
