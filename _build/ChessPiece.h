@@ -14,6 +14,7 @@ public:
 	void setxy(Vector2 v);
 	virtual char getteam();
 	virtual Vector2* getlegalmoves(Grid* gptr)=0;
+	~ChessPiece();
 
 };
 

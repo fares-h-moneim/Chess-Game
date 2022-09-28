@@ -11,12 +11,14 @@
 Grid::Grid(Texture2D text)
 {
 	//creating team
-	team = 0;
+	team = 'w';
 	chessmove = LoadSound("./resources/chessmove.wav");
 	notchessmove= LoadSound("./resources/notchessmove.wav");
 	take = LoadSound("./resources/take.wav");
 	currentlyheld = nullptr;
 	texture = text;
+	teamwhite = new ChessPiece * [16];
+	teamblack = new ChessPiece * [16];
 	std::string name = "A8";
 	king* kingBlack=new king('b');
 	king* kingWhite = new king('w');
@@ -39,8 +41,26 @@ Grid::Grid(Texture2D text)
 	for (int i = 0; i < 8; i++)
 	{
 		pawnsWhite[i] = new pawn('w');
+		teamwhite[i] = pawnsWhite[i];
 		pawnsBlack[i] = new pawn('b');
+		teamblack[i] = pawnsBlack[i];
 	}
+	teamwhite[8] = rookWhite1;
+	teamwhite[9] = rookWhite2;
+	teamwhite[10] = bishopWhite1;
+	teamwhite[11] = bishopWhite2;
+	teamwhite[12] = knightWhite1;
+	teamwhite[13] = knightWhite2;
+	teamwhite[14] = kingWhite;
+	teamwhite[15] = queenWhite;
+	teamblack[8] = rookBlack1;
+	teamblack[9] = rookBlack2;
+	teamblack[10] = bishopBlack1;
+	teamblack[11] = bishopBlack2;
+	teamblack[12] = knightBlack1;
+	teamblack[13] = knightBlack2;
+	teamblack[14] = kingBlack;
+	teamblack[15] = queenBlack;
 	// creating cells
 	for (int i = 0; i < 8; i++)
 	{
@@ -85,7 +105,7 @@ Grid::Grid(Texture2D text)
 	}
 	for (int i = 0; i < 10; i++)
 		countremoved[i] = 0;
-
+	
 
 
 }
@@ -124,7 +144,9 @@ void Grid::DrawGrid()
 			DrawText(c, xx, yy, 30, BLACK);
 		yy += 110;
 	}
-	if (team == 0) {
+	if(checkmate())
+		DrawText("Checkmate", 730, 0, 30, RED);
+	if (team == 'w') {
 		std::string cur = "Currently Playing White";
 		char c[24];
 		for (int i = 0; i < cur.size(); i++) {
@@ -142,6 +164,7 @@ void Grid::DrawGrid()
 		c[23] = 0;
 		DrawText(c, 730, 690, 30, lightbrown);
 	}
+	
 }
 
 void Grid::mouseclicked()
@@ -176,18 +199,171 @@ void Grid::mouseclicked()
 
 }
 
-void Grid::movepiece(char &tm)
+bool Grid::checkmate()
+{
+	ChessPiece* pptr = nullptr;
+	Vector2* v1;
+	int n;
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			n = 0;
+			pptr=arr[i][j].getpiece();
+			if (pptr)
+			{
+				if (pptr->getteam() != team)
+				{
+					v1 = pptr->getlegalmoves(this);
+					int arrx[36];
+					int arry[36];
+					while (v1[n].x != -1)
+					{
+						arrx[n] = v1[n].x;
+						arry[n] = v1[n].y;
+						n++;
+					}
+					n = 0;
+					while (n<36)
+					{
+						if (arrx[n] > 7 || arrx[n] < 0)
+							break;
+						if (dynamic_cast<king*>(arr[arrx[n]][arry[n]].getpiece()))
+						{
+							if (arr[arrx[n]][arry[n]].getpiece()->getteam() == team)
+								return true;
+						}
+						n++;
+					}
+
+				}
+
+
+
+			}
+ 
+
+		}
+	}
+
+	return false;
+}
+
+bool Grid::gamewon()
+{
+	bool formofares = false;
+	if (checkmate())
+	{
+		ChessPiece* temptr = nullptr;
+		for (int i = 0; i < 8; i++)
+		{
+			for (int j = 0; j < 8; j++)
+			{
+				if (arr[i][j].getpiece())
+				{
+					
+					if (arr[i][j].getpiece()->getteam() == team)
+					{
+						//if (i == 6 && j == 3)
+						//	printf("for mo fares");
+
+						ChessPiece* ptr = arr[i][j].getpiece();
+						Vector2* v1 = ptr->getlegalmoves(this);
+						int arrx[36];
+						int arry[36];
+						int n = 0;
+						while (v1[n].x != -1)
+						{
+							arrx[n] = v1[n].x;
+							arry[n] = v1[n].y;
+							n++;
+						}
+						while (n != 0)
+						{
+							if (arrx[n] >= 0 && arrx[n] < 8)
+							{
+								temptr = arr[arrx[n]][arry[n]].getpiece();
+								arr[arrx[n]][arry[n]].setpiece(ptr, countremoved);
+								arr[i][j].removepiece();
+								if (!checkmate())
+								{
+									formofares = true;
+								}
+								if (temptr)
+								{
+									Vector2 vtemp = temptr->getxy();
+									arr[(int)vtemp.x][(int)vtemp.y].setpiece(temptr, countremoved);
+									int num = 0;
+									if (temptr->getteam() == 'b')
+										num += 5;
+									if (dynamic_cast<rook*>(temptr))
+										num += 4;
+									if (dynamic_cast<knight*>(temptr))
+										num += 3;
+									if (dynamic_cast<bishop*>(temptr))
+										num += 2;
+									if (dynamic_cast<queen*>(temptr))
+										num += 1;
+									countremoved[num]--;
+									num = 0;
+									if (ptr->getteam() == 'b')
+										num += 5;
+									if (dynamic_cast<rook*>(ptr))
+										num += 4;
+									if (dynamic_cast<knight*>(ptr))
+										num += 3;
+									if (dynamic_cast<bishop*>(ptr))
+										num += 2;
+									if (dynamic_cast<queen*>(ptr))
+										num += 1;
+									countremoved[num]--;
+									arr[arrx[n]][arry[n]].setpiece(temptr, countremoved);
+								}
+								else
+									arr[arrx[n]][arry[n]].removepiece();
+								arr[i][j].setpiece(ptr, countremoved);
+								//me wana bhbed 34an ttsl7
+								Vector2 vtemp;
+								vtemp.x = i;
+								vtemp.y = j;
+								ptr->setxy(vtemp);
+								if (formofares)
+									goto out;
+							}
+							n--;
+						}
+
+					}
+				}
+
+
+
+			}
+
+		}
+
+	out:
+		if (formofares)
+			return false;
+		else
+			return true;
+	}
+	return false;
+}
+
+void Grid::movepiece()
 {
 	int coorx = 0, coory = 0;
 	coorx = GetMouseX();
 	coory = GetMouseY();
+	//getting a piece to mouse
 	if (IsMouseButtonDown(0))
 	{
 		if (coorx > x && coorx < (x + sizex * 8) && coory>y && coory < (y + sizey * 8))
 		{
 			if (!currentlyheld && arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece())
 			{
-				if(arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece()->getteam()==tm)
+				if(arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece()->getteam()==team)
 				currentlyheld = arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece();
 			}
 			if (arr[(coorx - x) / sizex][(coory - y) / sizey].getpiece() == currentlyheld)
@@ -199,9 +375,6 @@ void Grid::movepiece(char &tm)
 			//to be fixed
 			int arrx[36];
 			int arry[36];
-			if (currentlyheld->getxy().x == 6 && currentlyheld->getxy().y == 5) {
-				printf("...");
-			}
 			Vector2* v1 = currentlyheld->getlegalmoves(this);
 			int n = 0;
 			int xx;
@@ -228,37 +401,106 @@ void Grid::movepiece(char &tm)
 		}
 			
 	}
-	
-	
+	//end of getting piece
+	//placing a piece
 	if (IsMouseButtonUp(0)&&currentlyheld)
 	{
-		Vector2* v1=currentlyheld->getlegalmoves(this);
-		int n = 0;
-		while (v1[n].x!=-1)
+		//if the position we are going to contains an enemy for sound
+		bool formofares;
+		if (arr[(int)((coorx - x) / sizex)][(int)((coory - y) / sizey)].getpiece()) {
+			formofares = true;
+		}
+		else {
+			formofares = false;
+		}
+		
+		 Vector2* v1=currentlyheld->getlegalmoves(this);
+		 int arrx[36];
+		 int arry[36];
+		 int n = 0;
+		 //placing the values in array bec vector2 sucks
+		 while (v1[n].x != -1)
+		 {
+			 arrx[n] = v1[n].x;
+			 arry[n] = v1[n].y;
+			 n++;
+		 }
+		 n = 0;
+		//checking the arrays
+		 bool ifcheckmated=false;
+		 Vector2 temploc;
+		while (n<36)
 		{
-			if(((coorx - x) / sizex)==v1[n].x&& ((coory - y) / sizey)==v1[n].y)
+			//if coordinate is legal "exists in array"
+			if(((coorx - x) / sizex)==arrx[n] && ((coory - y) / sizey) == arry[n])
 			{
-				if (arr[(int)((coorx - x) / sizex)][(int)((coory - y) / sizey)].getpiece()) {
+				ChessPiece* temptr = arr[arrx[n]][arry[n]].getpiece();
+				temploc = currentlyheld->getxy();
+				arr[arrx[n]][arry[n]].setpiece(currentlyheld, countremoved);
+				if(!checkmate())
+				currentlyheld = nullptr;
+				else
+				{
+					ifcheckmated = true;
+					if (temptr)
+					{
+						Vector2 vtemp = temptr->getxy();
+						arr[(int)vtemp.x][(int)vtemp.y].setpiece(temptr, countremoved);
+						int num = 0;
+						if (temptr->getteam() == 'b')
+							num += 5;
+						if (dynamic_cast<rook*>(temptr))
+							num += 4;
+						if (dynamic_cast<knight*>(temptr))
+							num += 3;
+						if (dynamic_cast<bishop*>(temptr))
+							num += 2;
+						if (dynamic_cast<queen*>(temptr))
+							num += 1;
+						countremoved[num]--;
+						 num = 0;
+						if (currentlyheld->getteam() == 'b')
+							num += 5;
+						if (dynamic_cast<rook*>(currentlyheld))
+							num += 4;
+						if (dynamic_cast<knight*>(currentlyheld))
+							num += 3;
+						if (dynamic_cast<bishop*>(currentlyheld))
+							num += 2;
+						if (dynamic_cast<queen*>(currentlyheld))
+							num += 1;
+						countremoved[num]--;
+					}
+					break;
+				}
+				//playing sound depending on case
+				if (formofares)
+				{
 					PlaySound(take);
 				}
-				else {
+				else
 					PlaySound(chessmove);
-				}
-				arr[(int)v1[n].x][(int)v1[n].y].setpiece(currentlyheld, countremoved);
-				currentlyheld = nullptr;
-				if (tm == 'w') {
-					tm = 'b';
-					team = 1;
+				//if piece placed change team
+				if (team == 'w') {
+					team = 'b';
 				}
 				else {
-					tm = 'w';
-					team = 0;
+					team = 'w';
+					
 				}
 				return;
             }
 			n++;
 		}
-		Vector2 v=currentlyheld->getxy();
+		//if no piece placed "invalid" return it to place
+		Vector2 v = currentlyheld->getxy();
+		if (ifcheckmated)
+		{
+			if(arr[(int)v.x][(int)v.y].getpiece()==currentlyheld)
+			arr[(int)v.x][(int)v.y].removepiece();
+			v = temploc;
+		}
+		
 		arr[(int)v.x][(int)v.y].setpiece(currentlyheld, countremoved);
 		PlaySound(notchessmove);
 		currentlyheld = nullptr;
@@ -272,4 +514,18 @@ cell* Grid::getcell(Vector2 v)
 	if (v.x < 0 || v.x>7 || v.y < 0 || v.y>7)
 		return nullptr;
 	return &arr[(int)v.x][(int)v.y];
+}
+
+Grid::~Grid()
+{
+	for (int i = 0; i < 16; i++)
+	{
+		delete teamblack[i];
+		delete teamwhite[i];
+	}
+	UnloadSound(take);
+	UnloadSound(chessmove);
+	UnloadSound(notchessmove);
+	delete[]teamblack;
+	delete[]teamwhite;
 }

@@ -23,3 +23,8 @@ char ChessPiece::getteam()
 {
 	return team;
 }
+
+ChessPiece::~ChessPiece()
+{
+	UnloadTexture(texture);
+}

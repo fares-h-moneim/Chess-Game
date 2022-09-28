@@ -33,7 +33,6 @@ void cell::setpiece(ChessPiece* ptr,int arr[])
 		if (dynamic_cast<queen*>(piece))
 			num += 1;
 		arr[num]++;
-		delete piece;
 	}
 	piece = ptr;
 	if (ptr != nullptr)
@@ -48,6 +47,11 @@ void cell::setpiece(ChessPiece* ptr,int arr[])
 ChessPiece* cell::getpiece()
 {
 	return piece;
+}
+
+void cell::removepiece()
+{
+	piece = nullptr;
 }
 
 void cell::drawcell()

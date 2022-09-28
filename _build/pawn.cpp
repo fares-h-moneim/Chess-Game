@@ -76,6 +76,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x + 1;
 						v.y = y + 1;
+						cptr = gptr->getcell(v);
+						if(cptr)
+						if(!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -89,6 +92,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x - 1;
 						v.y = y + 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -140,6 +146,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x + 1;
 						v.y = y + 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -153,6 +162,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x - 1;
 						v.y = y + 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -217,6 +229,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x + 1;
 						v.y = y - 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -230,6 +245,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x - 1;
 						v.y = y - 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -271,7 +289,7 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 						legal[count++] = v;
 					}
 			}
-			v.x = x + 1;
+			/*v.x = x + 1;
 			v.y = y;
 			cptr = gptr->getcell(v);
 			if (cptr)
@@ -281,6 +299,9 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x + 1;
 						v.y = y - 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
 			}
@@ -294,9 +315,12 @@ Vector2* pawn::getlegalmoves(Grid* gptr)
 					{
 						v.x = x - 1;
 						v.y = y - 1;
+						cptr = gptr->getcell(v);
+						if (cptr)
+							if (!cptr->getpiece())
 						legal[count++] = v;
 					}
-			}
+			}*/
 			v.x = -1.0;
 			v.y = -1.0;
 			legal[count++] = v;

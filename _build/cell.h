@@ -20,6 +20,7 @@ public:
 	void setdata(int xx, int yy, std::string nme, Color color);
 	void setpiece(ChessPiece* ptr,int arr[]);
 	ChessPiece* getpiece();
+	void removepiece();
 	void drawcell();
 	std::string getname();
 

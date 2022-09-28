@@ -1,7 +1,153 @@
-﻿  Grid.cpp
-E:\Chess_Game\chess-game\_build\Grid.cpp(150,14): warning C4101: 'ptrl': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(212,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(213,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(208,8): warning C4101: 'yy': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(207,8): warning C4101: 'xx': unreferenced local variable
+﻿  bishop.cpp
+E:\Chess_Game\chess-game\_build\bishop.cpp(18,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(19,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(39,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(40,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(60,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(61,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(81,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\bishop.cpp(82,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  cell.cpp
+E:\Chess_Game\chess-game\_build\cell.cpp(41,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\cell.cpp(42,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  ChessPiece.cpp
+E:\Chess_Game\chess-game\_build\ChessPiece.cpp(11,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\ChessPiece.cpp(12,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\ChessPiece.cpp(18,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\ChessPiece.cpp(19,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  game.cpp
+  Grid.cpp
+E:\Chess_Game\chess-game\_build\Grid.cpp(173,14): warning C4101: 'ptrl': unreferenced local variable
+E:\Chess_Game\chess-game\_build\Grid.cpp(222,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(223,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(277,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(278,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(327,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(328,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(385,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(386,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(424,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(425,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Chess_Game\chess-game\_build\Grid.cpp(381,8): warning C4101: 'yy': unreferenced local variable
+E:\Chess_Game\chess-game\_build\Grid.cpp(380,8): warning C4101: 'xx': unreferenced local variable
+  king.cpp
+E:\Chess_Game\chess-game\_build\king.cpp(18,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(19,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(36,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(37,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(54,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(55,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(72,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(73,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(90,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(91,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(109,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(110,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(128,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(129,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(147,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\king.cpp(148,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  knight.cpp
+E:\Chess_Game\chess-game\_build\knight.cpp(18,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(19,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(30,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(31,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(42,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(43,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(54,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(55,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(66,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(67,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(78,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(79,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(90,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(91,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(102,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\knight.cpp(103,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  pawn.cpp
+E:\Chess_Game\chess-game\_build\pawn.cpp(28,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(29,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(39,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(40,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(47,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(48,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(58,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(59,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(69,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(70,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(77,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(78,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(85,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(86,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(93,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(94,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(109,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(110,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(117,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(118,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(128,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(129,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(139,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(140,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(147,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(148,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(155,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(156,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(163,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(164,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(181,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(182,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(192,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(193,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(200,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(201,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(211,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(212,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(222,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(223,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(230,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(231,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(238,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(239,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(246,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(247,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(262,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(263,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(270,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(271,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(281,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\pawn.cpp(282,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  queen.cpp
+E:\Chess_Game\chess-game\_build\queen.cpp(18,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(19,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(38,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(39,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(58,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(59,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(78,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(79,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(98,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(99,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(119,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(120,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(140,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(141,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(161,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\queen.cpp(162,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  rook.cpp
+E:\Chess_Game\chess-game\_build\rook.cpp(20,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(21,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(40,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(41,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(60,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(61,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(80,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Chess_Game\chess-game\_build\rook.cpp(81,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+E:\Chess_Game\chess-game\_build\rook.cpp(103): warning C4172: returning address of local variable or temporary: legal
+E:\Chess_Game\chess-game\_build\queen.cpp(185): warning C4172: returning address of local variable or temporary: legal
+E:\Chess_Game\chess-game\_build\pawn.cpp(330): warning C4172: returning address of local variable or temporary: legal
+E:\Chess_Game\chess-game\_build\knight.cpp(117): warning C4172: returning address of local variable or temporary: legal
+E:\Chess_Game\chess-game\_build\king.cpp(169): warning C4172: returning address of local variable or temporary: legal
+E:\Chess_Game\chess-game\_build\bishop.cpp(105): warning C4172: returning address of local variable or temporary: legal
   game-premake-main.vcxproj -> E:\Chess_Game\chess-game\_bin\Debug\game-premake-main.exe
