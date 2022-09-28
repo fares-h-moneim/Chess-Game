@@ -36,6 +36,8 @@ void main()
 	Texture2D texture = LoadTexture("./resources/chess_board.png");
 	Texture2D texturebutton = LoadTexture("./resources/Reset_button.png");
 	Texture2D texturepressed = LoadTexture("./resources/Reset_Pressed.png");
+	Image icon = LoadImage("./resources/pawn_black.png");
+	SetWindowIcon(icon);
 	Grid* thegrid=new Grid(texture);
 	while (!WindowShouldClose())
 	{

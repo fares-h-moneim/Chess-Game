@@ -1,19 +1,2 @@
-﻿  Grid.cpp
-E:\Chess_Game\chess-game\_build\Grid.cpp(137,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(138,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(150,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(151,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(192,14): warning C4101: 'ptrl': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(241,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(242,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(296,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(297,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(346,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(347,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(404,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(405,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(443,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(444,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Chess_Game\chess-game\_build\Grid.cpp(400,8): warning C4101: 'yy': unreferenced local variable
-E:\Chess_Game\chess-game\_build\Grid.cpp(399,8): warning C4101: 'xx': unreferenced local variable
+﻿  game.cpp
   game-premake-main.vcxproj -> E:\Chess_Game\chess-game\_bin\Debug\game-premake-main.exe
